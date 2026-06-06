@@ -1,0 +1,5 @@
+.vscode/**
+.vsmd-debug.*
+*.log
+src/**/*.map
+node_modules/.cache

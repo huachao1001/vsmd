@@ -1,0 +1,100 @@
+/* 浅色主题覆盖样式 */
+
+html.vsmd-preview-light, html.vsmd-preview-light body {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
+.vsmd-preview-light .vsmd-content-inner {
+  background-color: #ffffff !important;
+}
+
+.vsmd-preview-light pre,
+.vsmd-preview-light pre code.hljs,
+.vsmd-preview-light .hljs {
+  background-color: #f5f5f5 !important;
+}
+
+.vsmd-preview-light code {
+  background-color: #f5f5f5 !important;
+  color: #333333 !important;
+}
+
+.vsmd-preview-light blockquote {
+  background-color: #f5f5f5 !important;
+  border-color: #ddd !important;
+  color: #666 !important;
+}
+
+.vsmd-preview-light table th {
+  background-color: #f5f5f5 !important;
+}
+
+.vsmd-preview-light table td,
+.vsmd-preview-light table,
+.vsmd-preview-light th,
+.vsmd-preview-light td {
+  border-color: #ddd !important;
+}
+
+.vsmd-preview-light .vsmd-sidebar {
+  background-color: #f5f5f5 !important;
+  border-left-color: #ddd !important;
+}
+
+.vsmd-preview-light .vsmd-sidebar-btn {
+  color: #333333 !important;
+}
+
+.vsmd-preview-light .vsmd-sidebar-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.vsmd-preview-light .vsmd-sidebar-btn.close {
+  color: #e74c3c !important;
+}
+
+/* 滚动条样式 - 覆盖VSCode注入的scrollbar-color */
+html.vsmd-preview-light {
+  scrollbar-color: #888 #f5f5f5 !important;
+}
+
+body.vsmd-preview-light {
+  scrollbar-color: #888 #f5f5f5 !important;
+}
+
+.vsmd-preview-light .vsmd-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vsmd-preview-light .vsmd-content::-webkit-scrollbar-track {
+  background: #f5f5f5 !important;
+}
+
+.vsmd-preview-light .vsmd-content::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px;
+}
+
+.vsmd-preview-light .vsmd-content::-webkit-scrollbar-thumb:hover {
+  background: #666 !important;
+}
+
+.vsmd-preview-light .vsmd-content-inner::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vsmd-preview-light .vsmd-content-inner::-webkit-scrollbar-track {
+  background: #f5f5f5 !important;
+}
+
+.vsmd-preview-light .vsmd-content-inner::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px;
+}
+
+.vsmd-preview-light .vsmd-content-inner::-webkit-scrollbar-thumb:hover {
+  background: #666 !important;
+}

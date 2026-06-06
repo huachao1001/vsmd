@@ -1,0 +1,19 @@
+pre {
+  background-color: var(--vsmd-pre-bg);
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  user-select: text;
+}
+
+code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  user-select: text;
+}
+
+pre code.hljs,
+code.hljs {
+  background-color: inherit;
+}

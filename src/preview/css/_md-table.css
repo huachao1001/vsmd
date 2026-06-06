@@ -1,0 +1,16 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9375rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--vsmd-table-border);
+  padding: 8px;
+}
+
+th {
+  background-color: var(--vsmd-th-bg);
+}

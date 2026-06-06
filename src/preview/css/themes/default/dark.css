@@ -1,0 +1,100 @@
+/* 深色主题覆盖样式 */
+
+html.vsmd-preview-dark, html.vsmd-preview-dark body {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+}
+
+.vsmd-preview-dark .vsmd-content-inner {
+  background-color: #1e1e1e !important;
+}
+
+.vsmd-preview-dark pre,
+.vsmd-preview-dark pre code.hljs,
+.vsmd-preview-dark .hljs {
+  background-color: #2d2d2d !important;
+}
+
+.vsmd-preview-dark code {
+  background-color: #2d2d2d !important;
+  color: #d4d4d4 !important;
+}
+
+.vsmd-preview-dark blockquote {
+  background-color: #252526 !important;
+  border-color: #555 !important;
+  color: #aaa !important;
+}
+
+.vsmd-preview-dark table th {
+  background-color: #252526 !important;
+}
+
+.vsmd-preview-dark table td,
+.vsmd-preview-dark table,
+.vsmd-preview-dark th,
+.vsmd-preview-dark td {
+  border-color: #3c3c3c !important;
+}
+
+.vsmd-preview-dark .vsmd-sidebar {
+  background-color: #252526 !important;
+  border-left-color: #3c3c3c !important;
+}
+
+.vsmd-preview-dark .vsmd-sidebar-btn {
+  color: #d4d4d4 !important;
+}
+
+.vsmd-preview-dark .vsmd-sidebar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.vsmd-preview-dark .vsmd-sidebar-btn.close {
+  color: #e74c3c !important;
+}
+
+/* 滚动条样式 - 覆盖VSCode注入的scrollbar-color */
+html.vsmd-preview-dark {
+  scrollbar-color: #555 #252526 !important;
+}
+
+body.vsmd-preview-dark {
+  scrollbar-color: #555 #252526 !important;
+}
+
+.vsmd-preview-dark .vsmd-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vsmd-preview-dark .vsmd-content::-webkit-scrollbar-track {
+  background: #252526 !important;
+}
+
+.vsmd-preview-dark .vsmd-content::-webkit-scrollbar-thumb {
+  background: #555 !important;
+  border-radius: 4px;
+}
+
+.vsmd-preview-dark .vsmd-content::-webkit-scrollbar-thumb:hover {
+  background: #777 !important;
+}
+
+.vsmd-preview-dark .vsmd-content-inner::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vsmd-preview-dark .vsmd-content-inner::-webkit-scrollbar-track {
+  background: #252526 !important;
+}
+
+.vsmd-preview-dark .vsmd-content-inner::-webkit-scrollbar-thumb {
+  background: #555 !important;
+  border-radius: 4px;
+}
+
+.vsmd-preview-dark .vsmd-content-inner::-webkit-scrollbar-thumb:hover {
+  background: #777 !important;
+}

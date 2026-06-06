@@ -1,0 +1,10 @@
+{
+  "themes": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "跟随VSCode主题自动切换深浅色"
+    }
+  ],
+  "defaultTheme": "default"
+}

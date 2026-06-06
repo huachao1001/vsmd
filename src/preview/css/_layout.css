@@ -1,0 +1,53 @@
+.vsmd-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.vsmd-content {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.vsmd-content-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.vsmd-content.mobile .vsmd-content-inner {
+  max-width: 375px;
+  padding: 20px;
+  border-left: 1px solid var(--vsmd-table-border);
+  border-right: 1px solid var(--vsmd-table-border);
+}
+
+.vsmd-sidebar {
+  width: 50px;
+  min-width: 50px;
+  height: 100vh;
+  background-color: var(--vsmd-sidebar-bg);
+  border-left: 1px solid var(--vsmd-table-border);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* 滚动条样式 - 固定在内容区右侧 */
+.vsmd-content::-webkit-scrollbar {
+  width: 10px;
+}
+.vsmd-content::-webkit-scrollbar-track {
+  background: var(--vsmd-scrollbar-track);
+}
+.vsmd-content::-webkit-scrollbar-thumb {
+  background: var(--vsmd-scrollbar-thumb);
+  border-radius: 5px;
+}
