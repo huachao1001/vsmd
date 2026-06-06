@@ -2,6 +2,8 @@
 
 A VSCode extension to render Markdown files as HTML.
 
+**Install from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=huachao.vsmd)**
+
 ## Features
 
 - **One-click Preview**: Click the markdown icon in editor title bar to toggle preview
