@@ -1,5 +1,7 @@
 # VSMD - Markdown Preview
 
+<img src="https://raw.githubusercontent.com/huachao1001/vsmd/refs/heads/main/logo.png" width="128" align="left" />
+
 A VSCode extension to render Markdown files as HTML.
 
 **Install from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=huachao.vsmd)**
@@ -66,7 +68,7 @@ Use `.vsmd-content-inner` selector to only affect markdown content:
 
 If you find this extension useful, please consider supporting:
 
-<img src="qrcode.jpg" width="200" alt="Buy Me a Coffee">
+<img src="https://raw.githubusercontent.com/huachao1001/vsmd/refs/heads/main/qrcode.jpg" width="200" alt="Buy Me a Coffee">
 
 ## License
 
