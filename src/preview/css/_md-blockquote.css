@@ -1,6 +1,0 @@
-blockquote {
-  border-left: 4px solid var(--vsmd-blockquote-border);
-  margin: 0;
-  padding-left: 20px;
-  color: var(--vsmd-blockquote-color);
-}
