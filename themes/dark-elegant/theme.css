@@ -1,0 +1,32 @@
+.vsmd-content-inner {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+.vsmd-content-inner h1,
+.vsmd-content-inner h2,
+.vsmd-content-inner h3,
+.vsmd-content-inner h4,
+.vsmd-content-inner h5,
+.vsmd-content-inner h6 {
+  color: #569cd6;
+}
+.vsmd-content-inner a {
+  color: #4ec9b0;
+}
+.vsmd-content-inner code {
+  background-color: #2d2d2d;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.vsmd-content-inner pre {
+  background-color: #252526;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.vsmd-content-inner blockquote {
+  border-left: 4px solid #569cd6;
+  background-color: #252526;
+  padding: 10px 16px;
+  margin: 16px 0;
+}
