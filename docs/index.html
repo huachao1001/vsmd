@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VSMD - Markdown Preview for VS Code</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #e4e4e7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .logo {
+      width: 128px;
+      height: 128px;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #569cd6, #4ec9b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      font-size: 1.4rem;
+      color: #a1a1aa;
+      margin-bottom: 40px;
+    }
+    .install-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #569cd6;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-bottom: 50px;
+    }
+    .install-btn:hover {
+      background: #4a8bc4;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(86,156,214,0.4);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+    .feature {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+    .feature h3 {
+      color: #4ec9b0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .feature p {
+      color: #a1a1aa;
+      line-height: 1.6;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #569cd6;
+    }
+    .stat-label {
+      color: #71717a;
+      margin-top: 5px;
+    }
+    .coffee {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+    .coffee h3 {
+      margin-bottom: 15px;
+      color: #e4e4e7;
+    }
+    .coffee img {
+      width: 200px;
+      border-radius: 8px;
+    }
+    footer {
+      color: #71717a;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #569cd6;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="VSMD Logo" class="logo">
+    <h1>VSMD</h1>
+    <p class="tagline">Markdown Preview for VS Code</p>
+    <a href="https://marketplace.visualstudio.com/items?itemName=huachao.vsmd" class="install-btn">
+      Install from VS Code Marketplace
+    </a>
+    
+    <div class="features">
+      <div class="feature">
+        <h3>One-click Preview</h3>
+        <p>Click the markdown icon in editor title bar to toggle preview instantly.</p>
+      </div>
+      <div class="feature">
+        <h3>Syntax Highlighting</h3>
+        <p>Code blocks highlighted with highlight.js for better readability.</p>
+      </div>
+      <div class="feature">
+        <h3>Dark/Light Mode</h3>
+        <p>Automatically follows VSCode theme, or manually override it.</p>
+      </div>
+      <div class="feature">
+        <h3>Theme Customization</h3>
+        <p>Support custom CSS themes stored in ~/.vsmd/themes/.</p>
+      </div>
+    </div>
+
+    <div class="coffee">
+      <h3>Buy Me a Coffee</h3>
+      <img src="qrcode.jpg" alt="Donate QR Code">
+    </div>
+
+    <footer>
+      <p>MIT License &middot; <a href="https://github.com/huachao1001/vsmd">GitHub</a></p>
+    </footer>
+  </div>
+</body>
+</html>
