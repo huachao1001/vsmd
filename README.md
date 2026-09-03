@@ -6,7 +6,7 @@ A VSCode extension that restyles the **built-in** Markdown preview.
 
 **Install from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=huachao.vsmd)**
 
-![VSMD Preview](https://raw.githubusercontent.com/huachao1001/vsmd/main/imgs/ScreenShot.png)
+![VSMD Preview](https://raw.githubusercontent.com/huachao1001/vsmd/main/imgs/preview.png)
 
 ## Features
 
