@@ -1,12 +1,12 @@
 # VSMD - Markdown Preview
 
-<img src="https://huachao1001.github.io/vsmd/images/logo.png" width="128" align="left" />
+<img src="https://raw.githubusercontent.com/huachao1001/vsmd/main/logo.png" width="128" align="left" />
 
 A VSCode extension that restyles the **built-in** Markdown preview.
 
 **Install from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=huachao.vsmd)**
 
-![VSMD Preview](imgs/ScreenShot.png)
+![VSMD Preview](https://raw.githubusercontent.com/huachao1001/vsmd/main/imgs/ScreenShot.png)
 
 ## Features
 
@@ -26,15 +26,6 @@ A VSCode extension that restyles the **built-in** Markdown preview.
 | Command | Description |
 |---------|-------------|
 | `vsmd.togglePreview` | Open the built-in Markdown preview to the side |
-
-## Buy Me a Coffee ☕
-
-If you find this extension useful, please consider supporting:
-
-
-
-<img src="https://huachao1001.github.io/vsmd/images/alipay.jpg" width="200" height="290" alt="Alipay">
-<img src="https://huachao1001.github.io/vsmd/images/wepay.jpg" width="200" height="290" alt="WeChat Pay">
 
 ## License
 

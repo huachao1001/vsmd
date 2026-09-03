@@ -276,6 +276,9 @@
   box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f !important;
   z-index: 1 !important;
 }
+/* ===== 隐藏 VSCode 内置预览的原生代码块复制按钮，避免与 vsmd-copy-btn 重复 ===== */
+.markdown-body .code-block-copy-button { display: none !important; }
+
 /* 右侧复制图标按钮（真实可点，由 previewScripts 注入的 JS 创建并绑定事件） */
 .markdown-body pre .vsmd-copy-btn {
   position: absolute !important;
@@ -387,15 +390,33 @@
 
 /* ===== 图片 / 分割线（搬运参考：img 圆角 10px + margin 18px；hr margin 34px + border-line） ===== */
 .markdown-body img {
+  display: block !important;
+  margin: 18px auto !important;
   max-width: 100% !important;
   border-radius: 10px !important;
-  margin: 18px 0 !important;
 }
 .markdown-body hr {
   border: none !important;
   height: 1px !important;
   background: var(--color-border-line) !important;
   margin: 34px 0 !important;
+}
+
+/* ===== 宽屏适配：逐步放宽内容区，避免宽屏下渲染宽度太窄 ===== */
+@media (min-width: 1400px) {
+  .markdown-body {
+    max-width: 1000px !important;
+  }
+}
+@media (min-width: 1800px) {
+  .markdown-body {
+    max-width: 1200px !important;
+  }
+}
+@media (min-width: 2200px) {
+  .markdown-body {
+    max-width: 1400px !important;
+  }
 }
 
 /* ===== 响应式（搬运参考 @media 768px） ===== */
