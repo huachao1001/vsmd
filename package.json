@@ -3,7 +3,7 @@
   "displayName": "VSMD - Markdown Preview",
   "description": "A VSCode extension to render Markdown files as HTML",
   "icon": "logo.png",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "huachao",
   "repository": "https://github.com/huachao1001/vsmd",
   "engines": {
