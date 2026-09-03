@@ -1,4 +1,4 @@
-# VSMD - Markdown Preview
+# Markdown Preview
 
 <img src="https://raw.githubusercontent.com/huachao1001/vsmd/main/logo.png" width="128" align="left" />
 
@@ -6,7 +6,7 @@ A VSCode extension that restyles the **built-in** Markdown preview.
 
 **Install from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=huachao.vsmd)**
 
-![VSMD Preview](https://raw.githubusercontent.com/huachao1001/vsmd/main/imgs/preview.png)
+![Markdown Preview](https://raw.githubusercontent.com/huachao1001/vsmd/main/imgs/preview.png)
 
 ## Features
 
@@ -19,7 +19,7 @@ A VSCode extension that restyles the **built-in** Markdown preview.
 
 1. Open a Markdown (.md) file
 2. Open VSCode's built-in preview: `Ctrl+Shift+V` (or `Cmd+K V` on macOS), or click the 📄 icon in the editor title bar
-3. The preview now uses VSMD's styling
+3. The preview now uses the theme's styling
 
 ## Commands
 

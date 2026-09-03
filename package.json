@@ -1,6 +1,6 @@
 {
   "name": "vsmd",
-  "displayName": "VSMD - Markdown Preview",
+  "displayName": "Markdown Preview",
   "description": "A VSCode extension to render Markdown files as HTML",
   "icon": "logo.png",
   "version": "1.2.1",

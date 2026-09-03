@@ -1,4 +1,4 @@
-# VSMD 许可证
+# Markdown Preview 许可证
 
 版权所有 (c) 2024 vsmd
 
