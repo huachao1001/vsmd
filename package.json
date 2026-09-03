@@ -3,15 +3,19 @@
   "displayName": "VSMD - Markdown Preview",
   "description": "A VSCode extension to render Markdown files as HTML",
   "icon": "logo.png",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "publisher": "huachao",
   "repository": "https://github.com/huachao1001/vsmd",
   "engines": {
     "vscode": "^1.85.0"
   },
   "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:vsmd.togglePreview"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "vsce package patch"
   },
   "keywords": [
     "markdown",
