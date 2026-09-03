@@ -1,0 +1,50 @@
+{
+  "name": "vsmd",
+  "displayName": "VSMD - Markdown Preview",
+  "description": "A VSCode extension to render Markdown files as HTML",
+  "icon": "logo.png",
+  "version": "1.1.6",
+  "publisher": "huachao",
+  "repository": "https://github.com/huachao1001/vsmd",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "main": "./extension.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "markdown",
+    "preview",
+    "html"
+  ],
+  "author": "vsmd",
+  "license": "SEE LICENSE IN LICENSE",
+  "contributes": {
+    "markdown.previewStyles": [
+      "./src/themes/default.css"
+    ],
+    "markdown.previewScripts": [
+      "./src/backend/copy.js"
+    ],
+    "commands": [
+      {
+        "command": "vsmd.togglePreview",
+        "title": "Toggle Markdown Preview",
+        "icon": "$(markdown)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "vsmd.togglePreview",
+          "when": "editorLangId == markdown",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "devDependencies": {},
+  "extensionDependencies": [],
+  "dependencies": {}
+}

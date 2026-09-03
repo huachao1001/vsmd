@@ -1,0 +1,420 @@
+/* =======================================================================
+   VSMD —— 绿色主题，注入 VSCode 官方预览
+   暗亮跟随：.vscode-light / .vscode-dark body class（VSCode 注入）
+   配色搬运自参考模板（亮色 :root / 暗色 [data-theme="dark"]），代码部分保留原配置
+   ======================================================================= */
+
+/* ===== 亮色模式：中性浅灰背景，绿色只做前景（照抄自参考 :root，去掉 code 变量） ===== */
+.vscode-light,
+.vscode-high-contrast-light {
+  --color-primary: #2E8B57;
+  --color-primary-soft: rgba(46, 139, 87, 0.18);
+  --color-page-bg: #f7f9fa;
+  --color-card-bg: #ffffff;
+  --color-text-main: #2d3336;
+  --color-text-mute: #737c80;
+  --color-border-line: #e4e8eb;
+  --color-quote-normal-bg: #f1f5f7;
+  --color-tip-bg: #e8f3ee;
+  --color-warn-bg: #fff8e8;
+  --color-warn-text: #b58900;
+  --color-code-inline-bg: #f3eefc;
+  --color-code-inline-text: #6f42c1;
+  --shadow-soft: 0 1px 10px rgba(46, 139, 87, 0.07);
+
+  --vsmd-scrollbar-track: #eef2f4;
+  --vsmd-scrollbar-thumb: #8b9499;
+  --vsmd-table-border: #e4e8eb;
+}
+
+/* ===== 暗色模式：冷中性深灰，无军绿色，衬托前景绿（照抄自参考 [data-theme="dark"]，去掉 code 变量） ===== */
+.vscode-dark,
+.vscode-high-contrast {
+  --color-primary: #58c788;
+  --color-primary-soft: rgba(88, 199, 136, 0.22);
+  --color-page-bg: #1f2326;
+  --color-card-bg: #2c3136;
+  --color-text-main: #edf0f2;
+  --color-text-mute: #a8b2b8;
+  --color-border-line: #3a4148;
+  --color-quote-normal-bg: #343b42;
+  --color-tip-bg: #2e443b;
+  --color-warn-bg: #423e30;
+  --color-warn-text: #ffd873;
+  --color-code-inline-bg: #2a2438;
+  --color-code-inline-text: #c792ea;
+  --shadow-soft: 0 2px 12px rgba(0,0,0,0.20);
+
+  --vsmd-scrollbar-track: #2c3136;
+  --vsmd-scrollbar-thumb: #5b656b;
+  --vsmd-table-border: #3a4148;
+}
+
+/* ===== 最外层 body 背景（搬运参考 page-bg：亮 #f7f9fa / 暗 #1f2326） ===== */
+.vscode-light, .vscode-high-contrast-light { background-color: #f7f9fa !important; }
+.vscode-dark, .vscode-high-contrast { background-color: #1f2326 !important; }
+
+/* ===== 容器 / 基础（搬运参考 article 卡片：card-bg + 阴影 + 圆角） ===== */
+.markdown-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: var(--color-text-main) !important;
+  background-color: var(--color-card-bg) !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 48px 52px !important;
+  box-sizing: border-box !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.markdown-body::-webkit-scrollbar { width: 10px !important; }
+.markdown-body::-webkit-scrollbar-track { background: var(--vsmd-scrollbar-track) !important; }
+.markdown-body::-webkit-scrollbar-thumb { background: var(--vsmd-scrollbar-thumb) !important; border-radius: 5px !important; }
+
+/* ===== 标题（搬运参考：全部绿色加粗 700；通用仅 color+font-weight） ===== */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 700 !important;
+  color: var(--color-primary) !important;
+}
+
+/* h1（对应参考 .article-h1：居中） */
+.markdown-body h1 {
+  font-size: 2rem !important;
+  line-height: 1.4 !important;
+  margin: 0 0 2px !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+  text-align: center !important;
+}
+
+/* h2：居中 */
+.markdown-body h2 {
+  font-size: 1.5rem !important;
+  margin: 38px 0 2px !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+  text-align: center !important;
+}
+
+/* ===== 一级 / 二级标题底部藤蔓（::after 内嵌 SVG，亮暗分别着色） ===== */
+.markdown-body h1::after,
+.markdown-body h2::after {
+  content: "" !important;
+  display: block !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+.markdown-body h1::after {
+  width: 520px !important;
+  height: 39px !important;
+  margin: 4px auto 0 !important;
+}
+.markdown-body h2::after {
+  width: 300px !important;
+  height: 30px !important;
+  margin: -3px auto 12px !important;
+}
+
+/* h1 藤蔓：亮色 #2E8B57 */
+.vscode-light .markdown-body h1::after,
+.vscode-high-contrast-light .markdown-body h1::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 24'><path d='M20 12 C60 4, 100 20, 140 12 C180 4, 220 20, 260 12 C280 8, 300 10, 310 12' stroke='%232E8B57' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M50 16 C55 13, 62 14, 66 11' stroke='%232E8B57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M90 8 C95 11, 102 10, 106 13' stroke='%232E8B57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M170 15 C175 12, 182 13, 186 10' stroke='%232E8B57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M230 9 C235 12, 242 11, 246 14' stroke='%232E8B57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M280 14 C285 11, 292 12, 296 9' stroke='%232E8B57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M48 16 C44 13, 46 9, 50 12 C54 15, 52 19, 48 16 Z' fill='%232E8B57' opacity='0.85'/><path d='M88 8 C84 5, 86 1, 90 4 C94 7, 92 11, 88 8 Z' fill='%232E8B57' opacity='0.85'/><path d='M168 15 C164 12, 166 8, 170 11 C174 14, 172 18, 168 15 Z' fill='%232E8B57' opacity='0.85'/><path d='M228 9 C224 6, 226 2, 230 5 C234 8, 232 12, 228 9 Z' fill='%232E8B57' opacity='0.85'/><path d='M278 14 C274 11, 276 7, 280 10 C284 13, 282 17, 278 14 Z' fill='%232E8B57' opacity='0.85'/><circle cx='30' cy='9' r='1.8' fill='%232E8B57'/><circle cx='120' cy='15' r='1.8' fill='%232E8B57'/><circle cx='200' cy='10' r='1.8' fill='%232E8B57'/><circle cx='300' cy='13' r='1.8' fill='%232E8B57'/></svg>") !important;
+}
+
+/* h1 藤蔓：暗色 #58c788 */
+.vscode-dark .markdown-body h1::after,
+.vscode-high-contrast .markdown-body h1::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 24'><path d='M20 12 C60 4, 100 20, 140 12 C180 4, 220 20, 260 12 C280 8, 300 10, 310 12' stroke='%2358c788' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M50 16 C55 13, 62 14, 66 11' stroke='%2358c788' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M90 8 C95 11, 102 10, 106 13' stroke='%2358c788' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M170 15 C175 12, 182 13, 186 10' stroke='%2358c788' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M230 9 C235 12, 242 11, 246 14' stroke='%2358c788' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M280 14 C285 11, 292 12, 296 9' stroke='%2358c788' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M48 16 C44 13, 46 9, 50 12 C54 15, 52 19, 48 16 Z' fill='%2358c788' opacity='0.85'/><path d='M88 8 C84 5, 86 1, 90 4 C94 7, 92 11, 88 8 Z' fill='%2358c788' opacity='0.85'/><path d='M168 15 C164 12, 166 8, 170 11 C174 14, 172 18, 168 15 Z' fill='%2358c788' opacity='0.85'/><path d='M228 9 C224 6, 226 2, 230 5 C234 8, 232 12, 228 9 Z' fill='%2358c788' opacity='0.85'/><path d='M278 14 C274 11, 276 7, 280 10 C284 13, 282 17, 278 14 Z' fill='%2358c788' opacity='0.85'/><circle cx='30' cy='9' r='1.8' fill='%2358c788'/><circle cx='120' cy='15' r='1.8' fill='%2358c788'/><circle cx='200' cy='10' r='1.8' fill='%2358c788'/><circle cx='300' cy='13' r='1.8' fill='%2358c788'/></svg>") !important;
+}
+
+/* h2 藤蔓：亮色 #2E8B57 */
+.vscode-light .markdown-body h2::after,
+.vscode-high-contrast-light .markdown-body h2::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 18'><path d='M10 9 C40 3, 70 15, 90 9 C120 3, 150 15, 170 9' stroke='%232E8B57' stroke-width='1.3' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M35 12 C38 10, 42 11, 45 9' stroke='%232E8B57' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M75 6 C78 8, 82 7, 85 10' stroke='%232E8B57' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M125 11 C128 9, 132 10, 135 8' stroke='%232E8B57' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M155 7 C158 9, 162 8, 165 10' stroke='%232E8B57' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M33 12 C30 10, 31 7, 35 9 C39 11, 37 14, 33 12 Z' fill='%232E8B57'/><path d='M73 6 C70 4, 71 1, 75 3 C79 5, 77 8, 73 6 Z' fill='%232E8B57'/><path d='M123 11 C120 9, 121 6, 125 8 C129 10, 127 13, 123 11 Z' fill='%232E8B57'/><path d='M153 7 C150 5, 151 2, 155 4 C159 6, 157 9, 153 7 Z' fill='%232E8B57'/><circle cx='20' cy='7' r='1.5' fill='%232E8B57'/><circle cx='60' cy='12' r='1.5' fill='%232E8B57'/><circle cx='100' cy='8' r='1.5' fill='%232E8B57'/><circle cx='160' cy='10' r='1.5' fill='%232E8B57'/></svg>") !important;
+}
+
+/* h2 藤蔓：暗色 #58c788 */
+.vscode-dark .markdown-body h2::after,
+.vscode-high-contrast .markdown-body h2::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 18'><path d='M10 9 C40 3, 70 15, 90 9 C120 3, 150 15, 170 9' stroke='%2358c788' stroke-width='1.3' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M35 12 C38 10, 42 11, 45 9' stroke='%2358c788' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M75 6 C78 8, 82 7, 85 10' stroke='%2358c788' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M125 11 C128 9, 132 10, 135 8' stroke='%2358c788' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M155 7 C158 9, 162 8, 165 10' stroke='%2358c788' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M33 12 C30 10, 31 7, 35 9 C39 11, 37 14, 33 12 Z' fill='%2358c788'/><path d='M73 6 C70 4, 71 1, 75 3 C79 5, 77 8, 73 6 Z' fill='%2358c788'/><path d='M123 11 C120 9, 121 6, 125 8 C129 10, 127 13, 123 11 Z' fill='%2358c788'/><path d='M153 7 C150 5, 151 2, 155 4 C159 6, 157 9, 153 7 Z' fill='%2358c788'/><circle cx='20' cy='7' r='1.5' fill='%2358c788'/><circle cx='60' cy='12' r='1.5' fill='%2358c788'/><circle cx='100' cy='8' r='1.5' fill='%2358c788'/><circle cx='160' cy='10' r='1.5' fill='%2358c788'/></svg>") !important;
+}
+
+/* h3 / h4：双层绿色下划线（搬运参考 ::after 渐变线 + ::before 模糊阴影线） */
+.markdown-body h3,
+.markdown-body h4 {
+  position: relative !important;
+  display: inline-block !important;
+  margin: 30px 0 10px !important;
+}
+.markdown-body h3 { font-size: 1.28rem !important; }
+.markdown-body h4 { font-size: 1.12rem !important; }
+
+.markdown-body h3::after,
+.markdown-body h4::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -3px !important;
+  width: 100% !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-soft)) !important;
+  border-radius: 2px !important;
+}
+
+.markdown-body h3::before,
+.markdown-body h4::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 3px !important;
+  bottom: -5px !important;
+  width: 100% !important;
+  height: 4px !important;
+  background: var(--color-primary-soft) !important;
+  border-radius: 3px !important;
+  filter: blur(3px) !important;
+  opacity: 0.6 !important;
+  z-index: -1 !important;
+}
+
+/* h5 / h6：绿色加粗，无下划线（搬运参考：清除伪元素） */
+.markdown-body h5,
+.markdown-body h6 {
+  font-size: 1rem !important;
+  margin: 26px 0 10px !important;
+  position: static !important;
+  display: block !important;
+}
+.markdown-body h5::before,
+.markdown-body h5::after,
+.markdown-body h6::before,
+.markdown-body h6::after {
+  display: none !important;
+}
+
+/* ===== 段落 / 链接 / 强调（搬运参考） ===== */
+.markdown-body p {
+  margin-bottom: 18px !important;
+}
+
+.markdown-body a {
+  color: var(--color-primary) !important;
+  text-decoration: none !important;
+}
+.markdown-body a:hover { text-decoration: underline !important; }
+
+.markdown-body strong { font-weight: 700 !important; }
+.markdown-body em { font-style: italic !important; }
+.markdown-body del { text-decoration: line-through !important; }
+
+/* ===== 行内代码（照搬参考模板：背景色 + 文字色 + padding/圆角/字体/字号） ===== */
+.markdown-body code:not(pre code),
+.vscode-light .markdown-body code:not(pre code),
+.vscode-high-contrast-light .markdown-body code:not(pre code),
+.vscode-dark .markdown-body code:not(pre code),
+.vscode-high-contrast .markdown-body code:not(pre code) {
+  font-family: Consolas, Monaco, monospace !important;
+  background: var(--color-code-inline-bg) !important;
+  color: var(--color-code-inline-text) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.92em !important;
+}
+
+/* ===== 代码块字体：英文等宽（Consolas/Monaco）保持不变，中文回退到正文字体栈 ===== */
+.markdown-body pre,
+.markdown-body pre code {
+  font-family: Consolas, Monaco, 'Courier New', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
+}
+
+/* ===== 代码块顶部标题栏：底色条（与代码区分色） + 左侧红黄绿三圆 + 右侧复制按钮 ===== */
+.markdown-body pre {
+  position: relative !important;
+  padding-top: 28px !important;
+  border-radius: 10px !important;
+}
+/* 标题栏底色条 */
+.markdown-body pre::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 24px !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+/* 亮色标题栏：比代码区深一档 */
+.vscode-light .markdown-body pre::before,
+.vscode-high-contrast-light .markdown-body pre::before {
+  background: #e3e9ed !important;
+  border-bottom: 1px solid #cdd6dc !important;
+}
+/* 暗色标题栏：比代码区亮一档 */
+.vscode-dark .markdown-body pre::before,
+.vscode-high-contrast .markdown-body pre::before {
+  background: #232a30 !important;
+  border-bottom: 1px solid #2c3339 !important;
+}
+/* 三圆（叠在标题栏左侧） */
+.markdown-body pre::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 7px !important;
+  left: 14px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #ff5f56 !important;
+  box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f !important;
+  z-index: 1 !important;
+}
+/* 右侧复制图标按钮（真实可点，由 previewScripts 注入的 JS 创建并绑定事件） */
+.markdown-body pre .vsmd-copy-btn {
+  position: absolute !important;
+  top: 4px !important;
+  right: 8px !important;
+  z-index: 2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  line-height: 0 !important;
+  opacity: 0.55 !important;
+  transition: opacity 0.18s !important;
+}
+.markdown-body pre .vsmd-copy-btn:hover { opacity: 1 !important; }
+.markdown-body pre .vsmd-copy-btn svg { display: block !important; }
+.markdown-body pre .vsmd-copy-btn.copied { opacity: 1 !important; color: #27c93f !important; }
+
+.vscode-light .markdown-body pre .vsmd-copy-btn,
+.vscode-high-contrast-light .markdown-body pre .vsmd-copy-btn { color: #5a6570 !important; }
+.vscode-dark .markdown-body pre .vsmd-copy-btn,
+.vscode-high-contrast .markdown-body pre .vsmd-copy-btn { color: #adbac7 !important; }
+
+/* ===== 代码块高亮：atom-one-light（亮色，保留原配置） ===== */
+.vscode-light .markdown-body pre, .vscode-light .markdown-body pre code, .vscode-high-contrast-light .markdown-body pre, .vscode-high-contrast-light .markdown-body pre code { color: #383a42 !important; background: #f1f4f6 !important; }
+.vscode-light .markdown-body pre code.hljs, .vscode-high-contrast-light .markdown-body pre code.hljs { display:block !important; overflow-x:auto !important; padding:1em !important }
+.vscode-light .markdown-body .hljs, .vscode-high-contrast-light .markdown-body .hljs { color:#383a42 !important; background:#f1f4f6 !important }
+.vscode-light .markdown-body .hljs-comment, .vscode-light .markdown-body .hljs-quote, .vscode-high-contrast-light .markdown-body .hljs-comment, .vscode-high-contrast-light .markdown-body .hljs-quote { color:#008000 !important; font-style:italic !important }
+.vscode-light .markdown-body .hljs-doctag, .vscode-light .markdown-body .hljs-keyword, .vscode-light .markdown-body .hljs-formula, .vscode-high-contrast-light .markdown-body .hljs-doctag, .vscode-high-contrast-light .markdown-body .hljs-keyword, .vscode-high-contrast-light .markdown-body .hljs-formula { color:#a626a4 !important }
+.vscode-light .markdown-body .hljs-section, .vscode-light .markdown-body .hljs-name, .vscode-light .markdown-body .hljs-selector-tag, .vscode-light .markdown-body .hljs-deletion, .vscode-light .markdown-body .hljs-subst, .vscode-high-contrast-light .markdown-body .hljs-section, .vscode-high-contrast-light .markdown-body .hljs-name, .vscode-high-contrast-light .markdown-body .hljs-selector-tag, .vscode-high-contrast-light .markdown-body .hljs-deletion, .vscode-high-contrast-light .markdown-body .hljs-subst { color:#e45649 !important }
+.vscode-light .markdown-body .hljs-literal, .vscode-high-contrast-light .markdown-body .hljs-literal { color:#0184bb !important }
+.vscode-light .markdown-body .hljs-string, .vscode-light .markdown-body .hljs-regexp, .vscode-light .markdown-body .hljs-addition, .vscode-light .markdown-body .hljs-attribute, .vscode-light .markdown-body .hljs-meta .hljs-string, .vscode-high-contrast-light .markdown-body .hljs-string, .vscode-high-contrast-light .markdown-body .hljs-regexp, .vscode-high-contrast-light .markdown-body .hljs-addition, .vscode-high-contrast-light .markdown-body .hljs-attribute, .vscode-high-contrast-light .markdown-body .hljs-meta .hljs-string { color:#50a14f !important }
+.vscode-light .markdown-body .hljs-attr, .vscode-light .markdown-body .hljs-variable, .vscode-light .markdown-body .hljs-template-variable, .vscode-light .markdown-body .hljs-type, .vscode-light .markdown-body .hljs-selector-class, .vscode-light .markdown-body .hljs-selector-attr, .vscode-light .markdown-body .hljs-selector-pseudo, .vscode-light .markdown-body .hljs-number, .vscode-high-contrast-light .markdown-body .hljs-attr, .vscode-high-contrast-light .markdown-body .hljs-variable, .vscode-high-contrast-light .markdown-body .hljs-template-variable, .vscode-high-contrast-light .markdown-body .hljs-type, .vscode-high-contrast-light .markdown-body .hljs-selector-class, .vscode-high-contrast-light .markdown-body .hljs-selector-attr, .vscode-high-contrast-light .markdown-body .hljs-selector-pseudo, .vscode-high-contrast-light .markdown-body .hljs-number { color:#986801 !important }
+.vscode-light .markdown-body .hljs-symbol, .vscode-light .markdown-body .hljs-bullet, .vscode-light .markdown-body .hljs-link, .vscode-light .markdown-body .hljs-meta, .vscode-light .markdown-body .hljs-selector-id, .vscode-light .markdown-body .hljs-title, .vscode-high-contrast-light .markdown-body .hljs-symbol, .vscode-high-contrast-light .markdown-body .hljs-bullet, .vscode-high-contrast-light .markdown-body .hljs-link, .vscode-high-contrast-light .markdown-body .hljs-meta, .vscode-high-contrast-light .markdown-body .hljs-selector-id, .vscode-high-contrast-light .markdown-body .hljs-title { color:#4078f2 !important }
+.vscode-light .markdown-body .hljs-built_in, .vscode-light .markdown-body .hljs-title.class_, .vscode-light .markdown-body .hljs-class .hljs-title, .vscode-high-contrast-light .markdown-body .hljs-built_in, .vscode-high-contrast-light .markdown-body .hljs-title.class_, .vscode-high-contrast-light .markdown-body .hljs-class .hljs-title { color:#c18401 !important }
+.vscode-light .markdown-body .hljs-emphasis, .vscode-high-contrast-light .markdown-body .hljs-emphasis { font-style:italic !important }
+.vscode-light .markdown-body .hljs-strong, .vscode-high-contrast-light .markdown-body .hljs-strong { font-weight:bold !important }
+.vscode-light .markdown-body .hljs-link, .vscode-high-contrast-light .markdown-body .hljs-link { text-decoration:underline !important }
+
+/* ===== 代码块高亮：atom-one-dark（暗色，保留原配置） ===== */
+.vscode-dark .markdown-body pre, .vscode-dark .markdown-body pre code, .vscode-high-contrast .markdown-body pre, .vscode-high-contrast .markdown-body pre code { color: #abb2bf !important; background: #1a1e22 !important; }
+.vscode-dark .markdown-body pre code.hljs, .vscode-high-contrast .markdown-body pre code.hljs { display:block !important; overflow-x:auto !important; padding:1em !important }
+.vscode-dark .markdown-body code.hljs, .vscode-high-contrast .markdown-body code.hljs { color:#abb2bf !important; background-color:#1a1e22 !important }
+.vscode-dark .markdown-body .hljs-comment, .vscode-dark .markdown-body .hljs-quote, .vscode-high-contrast .markdown-body .hljs-comment, .vscode-high-contrast .markdown-body .hljs-quote { color:#57A64A !important; font-style:italic !important }
+.vscode-dark .markdown-body .hljs-doctag, .vscode-dark .markdown-body .hljs-keyword, .vscode-dark .markdown-body .hljs-formula, .vscode-high-contrast .markdown-body .hljs-doctag, .vscode-high-contrast .markdown-body .hljs-keyword, .vscode-high-contrast .markdown-body .hljs-formula { color:#c678dd !important }
+.vscode-dark .markdown-body .hljs-section, .vscode-dark .markdown-body .hljs-name, .vscode-dark .markdown-body .hljs-selector-tag, .vscode-dark .markdown-body .hljs-deletion, .vscode-dark .markdown-body .hljs-subst, .vscode-high-contrast .markdown-body .hljs-section, .vscode-high-contrast .markdown-body .hljs-name, .vscode-high-contrast .markdown-body .hljs-selector-tag, .vscode-high-contrast .markdown-body .hljs-deletion, .vscode-high-contrast .markdown-body .hljs-subst { color:#e06c75 !important }
+.vscode-dark .markdown-body .hljs-literal, .vscode-high-contrast .markdown-body .hljs-literal { color:#56b6c2 !important }
+.vscode-dark .markdown-body .hljs-string, .vscode-dark .markdown-body .hljs-regexp, .vscode-dark .markdown-body .hljs-addition, .vscode-dark .markdown-body .hljs-attribute, .vscode-dark .markdown-body .hljs-meta .hljs-string, .vscode-high-contrast .markdown-body .hljs-string, .vscode-high-contrast .markdown-body .hljs-regexp, .vscode-high-contrast .markdown-body .hljs-addition, .vscode-high-contrast .markdown-body .hljs-attribute, .vscode-high-contrast .markdown-body .hljs-meta .hljs-string { color:#98c379 !important }
+.vscode-dark .markdown-body .hljs-attr, .vscode-dark .markdown-body .hljs-variable, .vscode-dark .markdown-body .hljs-template-variable, .vscode-dark .markdown-body .hljs-type, .vscode-dark .markdown-body .hljs-selector-class, .vscode-dark .markdown-body .hljs-selector-attr, .vscode-dark .markdown-body .hljs-selector-pseudo, .vscode-dark .markdown-body .hljs-number, .vscode-high-contrast .markdown-body .hljs-attr, .vscode-high-contrast .markdown-body .hljs-variable, .vscode-high-contrast .markdown-body .hljs-template-variable, .vscode-high-contrast .markdown-body .hljs-type, .vscode-high-contrast .markdown-body .hljs-selector-class, .vscode-high-contrast .markdown-body .hljs-selector-attr, .vscode-high-contrast .markdown-body .hljs-selector-pseudo, .vscode-high-contrast .markdown-body .hljs-number { color:#d19a66 !important }
+.vscode-dark .markdown-body .hljs-symbol, .vscode-dark .markdown-body .hljs-bullet, .vscode-dark .markdown-body .hljs-link, .vscode-dark .markdown-body .hljs-meta, .vscode-dark .markdown-body .hljs-selector-id, .vscode-dark .markdown-body .hljs-title, .vscode-high-contrast .markdown-body .hljs-symbol, .vscode-high-contrast .markdown-body .hljs-bullet, .vscode-high-contrast .markdown-body .hljs-link, .vscode-high-contrast .markdown-body .hljs-meta, .vscode-high-contrast .markdown-body .hljs-selector-id, .vscode-high-contrast .markdown-body .hljs-title { color:#61aeee !important }
+.vscode-dark .markdown-body .hljs-built_in, .vscode-dark .markdown-body .hljs-title.class_, .vscode-dark .markdown-body .hljs-class .hljs-title, .vscode-high-contrast .markdown-body .hljs-built_in, .vscode-high-contrast .markdown-body .hljs-title.class_, .vscode-high-contrast .markdown-body .hljs-class .hljs-title { color:#e6c07b !important }
+.vscode-dark .markdown-body .hljs-emphasis, .vscode-high-contrast .markdown-body .hljs-emphasis { font-style:italic !important }
+.vscode-dark .markdown-body .hljs-strong, .vscode-high-contrast .markdown-body .hljs-strong { font-weight:bold !important }
+.vscode-dark .markdown-body .hljs-link, .vscode-high-contrast .markdown-body .hljs-link { text-decoration:underline !important }
+
+
+/* ===== 引用块（搬运参考：padding/margin/border/radius + tip/warn 选择器） ===== */
+.markdown-body blockquote {
+  margin: 22px 0 !important;
+  padding: 16px 20px !important;
+  border-left: 4px solid var(--color-primary) !important;
+  border-radius: 0 10px 10px 0 !important;
+  background: var(--color-quote-normal-bg) !important;
+  color: inherit !important;
+}
+.markdown-body blockquote > p { margin: 0.5em 0 !important; }
+
+/* tip / warn（照搬参考 :has 选择器） */
+.markdown-body blockquote:has(p:first-child::before(content:"💡")) {
+  background: var(--color-tip-bg) !important;
+  color: var(--color-primary) !important;
+}
+.markdown-body blockquote:has(p:first-child::before(content:"⚠️")) {
+  background: var(--color-warn-bg) !important;
+  color: var(--color-warn-text) !important;
+  border-left-color: var(--color-warn-text) !important;
+}
+
+/* ===== 表格 ===== */
+.markdown-body table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1em 0 !important;
+}
+.markdown-body th,
+.markdown-body td {
+  padding: 8px 13px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: var(--color-border-line) !important;
+}
+.markdown-body th { font-weight: 600 !important; }
+
+/* ===== 列表（搬运参考：margin 18px 0 18px 2em；li margin-bottom 8px） ===== */
+.markdown-body ul,
+.markdown-body ol {
+  margin: 18px 0 18px 2em !important;
+  padding-left: 0 !important;
+}
+.markdown-body li { margin-bottom: 8px !important; }
+.markdown-body li > ul,
+.markdown-body li > ol { margin: 0.25em 0 !important; }
+
+/* ===== 图片 / 分割线（搬运参考：img 圆角 10px + margin 18px；hr margin 34px + border-line） ===== */
+.markdown-body img {
+  max-width: 100% !important;
+  border-radius: 10px !important;
+  margin: 18px 0 !important;
+}
+.markdown-body hr {
+  border: none !important;
+  height: 1px !important;
+  background: var(--color-border-line) !important;
+  margin: 34px 0 !important;
+}
+
+/* ===== 响应式（搬运参考 @media 768px） ===== */
+@media (max-width: 768px) {
+  .markdown-body {
+    padding: 30px 22px !important;
+  }
+  .markdown-body h1 {
+    font-size: 1.7rem !important;
+  }
+  .markdown-body h2 {
+    font-size: 1.3rem !important;
+  }
+  .markdown-body h1::after {
+    width: 320px !important;
+    height: 24px !important;
+  }
+  .markdown-body h2::after {
+    width: 180px !important;
+    height: 18px !important;
+  }
+}

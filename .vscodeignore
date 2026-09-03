@@ -1,0 +1,7 @@
+.vscode/**
+.vsmd-debug.*
+*.log
+src/**/*.map
+node_modules/**
+node_modules/.cache
+package-lock.json

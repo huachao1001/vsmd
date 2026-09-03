@@ -1,36 +1,40 @@
-# VSMD
+# VSMD - Markdown Preview
 
-A VS Code extension to render Markdown files as HTML.
+<img src="https://huachao1001.github.io/vsmd/images/logo.png" width="128" align="left" />
+
+A VSCode extension that restyles the **built-in** Markdown preview.
+
+**Install from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=huachao.vsmd)**
+
+![VSMD Preview](imgs/ScreenShot.png)
 
 ## Features
 
-- One-click Preview - Click the markdown icon in editor title bar to toggle preview
-- Syntax Highlighting - Code blocks highlighted with highlight.js
-- Dark/Light Mode - Automatically follows VSCode theme, or manually override
-- Theme Customization - Support custom CSS themes
+> Current version: **1.1.6**
+
+- **Restyles the official preview**: No separate window — uses VSCode's built-in Markdown preview
+- **Dark/Light auto-switch**: Preview styling automatically follows the active VSCode color theme
 
 ## Quick Start
 
 1. Open a Markdown (.md) file
-2. Click the markdown icon in the editor title bar
-3. Preview appears in a side panel
+2. Open VSCode's built-in preview: `Ctrl+Shift+V` (or `Cmd+K V` on macOS), or click the 📄 icon in the editor title bar
+3. The preview now uses VSMD's styling
 
-## Theme Customization
+## Commands
 
-Custom themes are stored in the `themes/` directory. Each theme is a directory containing:
+| Command | Description |
+|---------|-------------|
+| `vsmd.togglePreview` | Open the built-in Markdown preview to the side |
 
-- `vsmd.json` - Theme metadata (name, css filename, image filename, description)
-- `theme.css` - Theme styles
-- `preview.jpg` or `preview.png` - Theme preview image
+## Buy Me a Coffee ☕
 
-Use the `.vsmd-content-inner` selector to target markdown content:
+If you find this extension useful, please consider supporting:
 
-```css
-.vsmd-content-inner h1 {
-  font-size: 2rem;
-  color: #569cd6;
-}
-```
+
+
+<img src="https://huachao1001.github.io/vsmd/images/alipay.jpg" width="200" height="290" alt="Alipay">
+<img src="https://huachao1001.github.io/vsmd/images/wepay.jpg" width="200" height="290" alt="WeChat Pay">
 
 ## License
 
